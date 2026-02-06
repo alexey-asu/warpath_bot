@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  warpath-bot:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - db_data:/app/warpath_knowledge.db
+    networks:
+      - bot-net
+
+volumes:
+  db_data:
+
+networks:
+  bot-net:
+    driver: bridge
+version: '3.8'
+services:
+  warpath-bot:
+    build: .
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - db_data:/app/warpath_knowledge.db
+    networks:
+      - bot-net
+
+volumes:
+  db_data:
+
+networks:
+  bot-net:
+    driver: bridge
